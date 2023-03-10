@@ -8,7 +8,7 @@
             "name": "flutter_application_002",
             "request": "launch",
             "type": "dart",
-            "program": "lib/conceitos_da_aula/5. statefull_widget.dart"
+            "program": "lib/main.dart"
         }
     ]
 }
