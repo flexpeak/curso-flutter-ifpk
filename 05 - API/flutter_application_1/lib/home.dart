@@ -11,10 +11,16 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _selectedIndex = 0;
 
+  void changeIndex(newIndex) {
+    setState(() {
+      _selectedIndex = newIndex;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: HomeBody(index: _selectedIndex),
+      body: HomeBody(index: _selectedIndex, changeIndex: changeIndex),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         items: const [
