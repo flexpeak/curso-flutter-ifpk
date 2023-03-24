@@ -22,11 +22,13 @@ class _ListarState extends State<Listar> {
   }
 
   void _fetchData() async {
+
     setState(() {
       _isLoading = true;
     });
 
     final response = await http.get(Uri.parse("https://dummyjson.com/products"));
+    if (!mounted) return;
     setState(() {
       _produtos = jsonDecode(response.body)['products'];
     });
@@ -40,11 +42,13 @@ class _ListarState extends State<Listar> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: SingleChildScrollView(
-        child: Wrap(
-          children: List.generate(_produtos.length, (index) {
-            return SingleProduct(produto: _produtos[index]);
-          }),
-        ),
+        child: !_isLoading
+            ? Wrap(
+                children: List.generate(_produtos.length, (index) {
+                  return SingleProduct(produto: _produtos[index]);
+                }),
+              )
+            : const Center(child: CircularProgressIndicator()),
       ),
     );
   }

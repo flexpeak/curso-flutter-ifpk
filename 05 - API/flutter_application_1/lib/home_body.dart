@@ -1,7 +1,9 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/configuracoes.dart';
 import 'package:flutter_application_1/pages/listar.dart';
 import 'package:flutter_application_1/pages/novo.dart';
+import 'package:flutter_application_1/pages/pesquisar.dart';
 
 class HomeBody extends StatelessWidget {
   final int index; 
@@ -13,8 +15,8 @@ class HomeBody extends StatelessWidget {
     switch (index) {
       case 0: return const Listar();
       case 1: return Novo(changeIndex: changeIndex);
-      case 2: return const Text('Pesquisar');
-      case 3: return const Text('Categorias');
+      case 2: return Pesquisar(changeIndex: changeIndex);
+      case 3: return const Configuracoes();
     }
     return const Placeholder();
   }
