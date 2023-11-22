@@ -238,8 +238,17 @@ class _FormWidgetState extends State<FormWidget> {
                     );
                   }
                 },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromARGB(255, 33, 243, 44), // Cor de fundo do botão
+                  foregroundColor: Colors.white, // Cor do texto
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10), // Bordas arredondadas
+                  ),
+                  elevation: 0, // Remove a sombra
+                  side: const BorderSide(color: Color.fromARGB(255, 243, 110, 33), width: 2), // Borda do botão
+                ),
                 child: const Text('Submit'),
-              )
+              )  
             ],
           ),
         ),
